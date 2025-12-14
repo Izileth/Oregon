@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 
 function App() {
  const [revealedSections, setRevealedSections] = useState<{ [key: number]: boolean }>({});
@@ -45,7 +45,7 @@ function App() {
         <h1 className="text-6xl font-thin tracking-[0.3em] mb-6">
           RUNAS
         </h1>
-        <div className="h-px w-64 mx-auto bg-gradient-to-r from-transparent via-white to-transparent"></div>
+        <div className="h-px w-64 mx-auto from-transparent via-white to-transparent"></div>
         <p className="text-gray-400 text-sm mt-8 max-w-xl mx-auto">
           Passe o cursor. Cada símbolo guarda um fragmento do conhecimento esquecido.
         </p>
