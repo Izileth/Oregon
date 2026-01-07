@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import App from '../App.js';
+import App from '../index.js';
 
 test('renders home page for root route', () => {
   render(
