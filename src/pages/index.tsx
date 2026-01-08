@@ -1,6 +1,6 @@
-import { useState, useMemo } from 'react';
+import  { useState, useMemo } from 'react';
 import { Heart, Sparkles, Lock, Unlock } from 'lucide-react';
-
+import { JSX } from 'react';
 interface Particle {
     id: number;
     x: number;
