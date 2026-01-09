@@ -1,6 +1,7 @@
-import  { useState, useMemo } from 'react';
-import { Heart, Sparkles, Lock, Unlock } from 'lucide-react';
+import { useState, useMemo } from 'react';
+import { Sparkles, Lock, Unlock } from 'lucide-react';
 import { JSX } from 'react';
+import { SplashScreen } from '../components/ui/SplashScreen.js';
 interface Particle {
     id: number;
     x: number;
@@ -27,6 +28,8 @@ function App(): JSX.Element {
     const [isRevealed, setIsRevealed] = useState<boolean>(false);
     const [showFinal, setShowFinal] = useState<boolean>(false);
     const [particles, setParticles] = useState<Particle[]>([]);
+    const [loading, setLoading] = useState(true);
+
 
     const backgroundParticles = useMemo(() => backgroundParticlesData, []);
     // Personalize aqui com sua mensagem!
@@ -36,6 +39,9 @@ function App(): JSX.Element {
         content: 'Desde o momento que te conheci, minha vida ganhou um novo significado. Você é a razão do meu sorriso, a luz dos meus dias, e a pessoa que me faz querer ser melhor a cada dia. Te amo mais do que as palavras podem expressar.'
     };
 
+    if (loading) {
+        return <SplashScreen onFinish={() => setLoading(false)} />;
+    }
     const handleReveal = (): void => {
         if (!isRevealed) {
             setIsRevealed(true);
@@ -90,22 +96,6 @@ function App(): JSX.Element {
 
             {/* Conteúdo principal */}
             <div className="max-w-4xl w-full">
-
-                {/* Header */}
-                <header className="text-center mb-12">
-                    <div className="inline-block">
-                        <div className="text-xs tracking-[0.5em] text-gray-400 mb-4 flex items-center gap-2 justify-center">
-                            <Sparkles className="w-4 h-4" />
-                            UMA MENSAGEM ESPECIAL PARA VOCÊ
-                            <Sparkles className="w-4 h-4" />
-                        </div>
-                        <h1 className="text-5xl md:text-7xl font-thin tracking-wider mb-6">
-                            Para Meu Amor
-                        </h1>
-                        <div className="h-px w-full from-transparent via-white to-transparent opacity-30"></div>
-                    </div>
-                </header>
-
                 {/* Carta principal */}
                 <div className="flex justify-center mb-12">
                     <div
@@ -159,26 +149,6 @@ function App(): JSX.Element {
                         )}
                     </div>
                 </div>
-
-                {/* Mensagem final */}
-                {showFinal && (
-                    <div className="animate-fade-in flex justify-center">
-                        <div className="text-center max-w-2xl w-full p-10 rounded-none bg-white text-black border-2 border-white shadow-2xl">
-                            <Heart className="w-16 h-16 mx-auto mb-6 text-black" />
-                            <h2 className="text-3xl md:text-4xl font-thin mb-4 tracking-wide">
-                                Te Amo Infinitamente
-                            </h2>
-                            <p className="text-lg text-gray-800 leading-relaxed mb-6 font-light">
-                                Cada momento ao seu lado é um presente que guardo no coração
-                            </p>
-                            <div className="flex items-center justify-center gap-2 text-black">
-                                <Heart className="w-5 h-5 fill-current" />
-                                <span className="text-sm tracking-widest font-light">PARA SEMPRE SEU</span>
-                                <Heart className="w-5 h-5 fill-current" />
-                            </div>
-                        </div>
-                    </div>
-                )}
 
                 {/* Footer */}
                 <footer className="mt-12 text-center text-gray-500 text-xs tracking-[0.3em]">
