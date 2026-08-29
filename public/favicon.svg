@@ -1,8 +1,51 @@
-<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background square for contrast (like YouTube/Vercel often use negative space) -->
-  <rect width="32" height="32" rx="6" fill="black"/>
-  <!-- Minimalist Cyberdeck Icon: A stylized 'C' or a terminal prompt -->
-  <!-- Using a chevron-like shape reminiscent of a terminal/cyberdeck interface -->
-  <path d="M10 8L18 16L10 24" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  <rect x="18" y="22" width="6" height="2" fill="white"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+  <title>Juno — ribbon inspired mark</title>
+  <desc>Ícone circular preto com símbolo branco em forma de fita entrelaçada, inspirado nas curvas da referência anexada.</desc>
+
+  <defs>
+    <radialGradient id="bg" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+      gradientTransform="translate(10 9) rotate(45) scale(27)">
+      <stop offset="0" stop-color="#2A2A2A"/>
+      <stop offset="1" stop-color="#050505"/>
+    </radialGradient>
+  </defs>
+
+  <circle cx="16" cy="16" r="16" fill="#000"/>
+  <circle cx="16" cy="16" r="15.75" fill="url(#bg)"/>
+
+  <!-- Fita superior: curva para a direita e desce pelo centro -->
+  <path
+    d="M15 7.25
+       C18.65 7.25 22.05 7.72 24.55 8.78
+       C26.35 9.55 27.15 10.55 27.15 11.65
+       C27.15 12.95 26.02 14.02 24.10 14.78
+       C21.70 15.72 18.55 16.10 15.00 16.10
+       L15.00 13.05
+       C18.35 13.05 20.95 12.72 22.55 12.10
+       C23.25 11.83 23.60 11.57 23.60 11.35
+       C23.60 11.08 23.03 10.82 22.10 10.57
+       C20.33 10.10 17.92 9.90 15.00 9.90
+       Z"
+    fill="#fff"/>
+
+  <!-- Fita inferior: curva para a esquerda, criando o S entrelaçado -->
+  <path
+    d="M17.00 15.90
+       C13.45 15.90 10.30 16.28 7.90 17.22
+       C5.98 17.98 4.85 19.05 4.85 20.35
+       C4.85 21.45 5.65 22.45 7.45 23.22
+       C9.95 24.28 13.35 24.75 17.00 24.75
+       L17.00 22.10
+       C14.08 22.10 11.67 21.90 9.90 21.43
+       C8.97 21.18 8.40 20.92 8.40 20.65
+       C8.40 20.43 8.75 20.17 9.45 19.90
+       C11.05 19.28 13.65 18.95 17.00 18.95
+       Z"
+    fill="#fff"/>
+
+  <!-- Haste central da fita inferior -->
+  <path d="M17 18.95V24.75H14.05V18.95Z" fill="#fff"/>
+
+  <!-- Corte/entrelaçamento: preserva a leitura de fita passando por trás -->
+  <path d="M15 13.05H17V18.95H15Z" fill="#000"/>
 </svg>
