@@ -5,6 +5,7 @@ import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Shop from "./pages/Shop";
+import Test from "./pages/Test";
 import SplashScreen from "./components/SplashScreen";
 
 export default function App() {
@@ -22,6 +23,7 @@ export default function App() {
               <Route index element={<Home />} />
               <Route path="about" element={<About />} />
               <Route path="shop" element={<Shop />} />
+              <Route path="test" element={<Test />} />
             </Route>
           </Routes>
         </div>
